@@ -1,0 +1,111 @@
+A
+	apachetop : top apache
+	apt-get install --only-upgrade package : mettre à jour uniquement un paquet
+	
+C
+	cat /proc/cpuinfo : afficher des infos sur le cpu
+	cat /proc/drbd : afficher des infos sur un noeud drbd
+	crontab -u user -l : voir la crontab spécifique à un user 
+	Fichier /et/crontab : */10 * * * * /home/toto/check-disk-space 
+		-> programmer un cron job toutes les 10 minutes
+  
+
+D
+	dd if=/dev/zero of=/tmp/output.img bs=8k count=256k : mesure le taux d'écriture sur disque
+	df -h : mémoire disponible
+	df -T : affiche en plus le système de fichier
+	dmesg | mail toto.titi@tata.com : envoyer un mail 
+  dmesg | more : afficher les messages affichés au boot
+	dmidecode : décoder la table dmi
+	dpkg -P $(dpkg -l | grep '^rc' | awk '{ print $2 }') : nettoyer son système
+	du -hsc /home/toto/test/* | sort -h : afficher la taille des sous répertoires en les triant par ordre croissant
+    
+E
+	ext2online : prendre en compte les changement effectués sur la taille du disque (EXT3)
+	
+F
+	find . -mtime +10 | while read file; do gzip "$file"; done : trouver les fichiers datant de plus de 10 jours et les zipper
+	ftptop : liste des connexions au serveur ftp
+	free : Retourne la swap utilisée et libre
+		-b : en B
+		-g : en GB
+		-k : en KB
+		-m : en MB
+		-t : avoir le total de la mémoire
+
+H
+	hatl : arrêter le sytème équivalent de shutdown -h now
+	hdparm -tT /dev/sda : mesurer la vitesse du disque dur
+	httpd -M : liste des modules utilisés 
+	
+I
+	iftop : top des interfaces réseau
+	
+K
+	kill num_pid : tue un processus ayant pour pid num_pid
+
+L
+	ls -lh : afficher la taille des fichiers et répertoires en Mo
+	lsof -n | grep LISTEN : liste les ports en écoute
+	lsof -n | grep UDP : liste les connexions UDP 
+	lvextend -v -L +xGo "mapper de la partition" : étendre une partition
+	lspci | grep VGA : informations sur la carte graphique
+  lsusb : lister les matériels usb
+    
+M
+	mtop : top mysql
+	magicsysrq : redémarrer un serveur qui est tombé https://fr.wikipedia.org/wiki/Magic_SysRq_key 
+	
+N
+  netstat -at : lister les ports tcp
+	netstat -au : lister les ports udp
+	netstat -l : lister les ports en écoute
+	netstat -lt : lister les ports tcp en écoute
+	netstat -lu : lister les ports udp en écoute
+	netstat -tap : liste des connexions établies
+	netstat -tulp : liste les ports en écoute
+	netstat -s : montrer les statistiques sur tous les ports
+	
+P
+	ps -ef | more : voir les processus qui tournent
+	ps -efH | more : voir les processus qui tournent sous forme d'arbre
+	
+R
+	resize2fs "mapper de la partition" : prendre en compte les changement effectués sur la taille du disque (EXT2/3/4)
+
+S
+	scp user@IP:file.txt . : copier un fichier depuis un serveur vers le répertoire courant dur répertoire sur lequel on est.
+	scp -r Repertoire user@IP:Chemin : copier un répertoire vers un dossier distant
+	sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config : désactiver selinux
+	sed -n 5p filename : permet d'afficher la 5ème ligne du fichier filename
+	setfacl -M acl /path/to/dir : appliquer des ACL sauvegardés dans un fichier 
+	sesstatus: statut de selinux
+	snmpwalk -v 2c -c communauté IP OID : faire un snmpwalk
+	
+T
+	tar czvf /chemin/repertoire/a/archiver* | ssh root@IP "cat > /chemin/repertoire/ou/sauvegarder/larchive.tgz" : faire un tar d'un répertoire et le sauvegarder sur une autre machine (tar over ssh) 
+	top : affiche les processus en cours d'exécution
+		-u process : affiche uniquement un processus
+	
+U
+	uname -p : savoir si la machine est sous 32 ou 64 bits
+	uname -a : version du noyau 
+	
+
+V 
+  vim +/search-term filename.txt : ouvrir le fichier à la ligne où se trouve le mot "search-term"
+	vgdisplay : voir la mémoire allouable
+	vigr /etc/group : éditer le fichier /etc/group
+	vipw /etc/passwd : éditer le fichier /etc/passwd 
+	vipw -s /etc/shadow : éditer le fichier /etc/shadow
+	visudo /etc/sudoers : éditer le fichier /etc/sudoers 
+	
+X
+  xargs -> cat url-list.txt | xargs wget –c : télécharger toutes les URLs se trouvant dans lefichier url-list.txt
+	xfs_growfs : prendre en compte les changement effectués sur la taille du disque (XFS)
+	
+W
+	wget -p URL : tester une URL 
+	
+Z
+	zgrep -i maxclient /var/log/apache2/acces.log : voir si et quand le maxclient a été atteint
