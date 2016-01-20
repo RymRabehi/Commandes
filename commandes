@@ -15,7 +15,7 @@ D
 	df -h : mémoire disponible
 	df -T : affiche en plus le système de fichier
 	dmesg | mail toto.titi@tata.com : envoyer un mail 
-  dmesg | more : afficher les messages affichés au boot
+  	dmesg | more : afficher les messages affichés au boot
 	dmidecode : décoder la table dmi
 	dpkg -P $(dpkg -l | grep '^rc' | awk '{ print $2 }') : nettoyer son système
 	du -hsc /home/toto/test/* | sort -h : afficher la taille des sous répertoires en les triant par ordre croissant
@@ -50,14 +50,14 @@ L
 	lsof -n | grep UDP : liste les connexions UDP 
 	lvextend -v -L +xGo "mapper de la partition" : étendre une partition
 	lspci | grep VGA : informations sur la carte graphique
-  lsusb : lister les matériels usb
+  	lsusb : lister les matériels usb
     
 M
 	mtop : top mysql
 	magicsysrq : redémarrer un serveur qui est tombé https://fr.wikipedia.org/wiki/Magic_SysRq_key 
 	
 N
-  netstat -at : lister les ports tcp
+  	netstat -at : lister les ports tcp
 	netstat -au : lister les ports udp
 	netstat -l : lister les ports en écoute
 	netstat -lt : lister les ports tcp en écoute
@@ -93,7 +93,7 @@ U
 	
 
 V 
-  vim +/search-term filename.txt : ouvrir le fichier à la ligne où se trouve le mot "search-term"
+	vim +/search-term filename.txt : ouvrir le fichier à la ligne où se trouve le mot "search-term"
 	vgdisplay : voir la mémoire allouable
 	vigr /etc/group : éditer le fichier /etc/group
 	vipw /etc/passwd : éditer le fichier /etc/passwd 
@@ -101,7 +101,7 @@ V
 	visudo /etc/sudoers : éditer le fichier /etc/sudoers 
 	
 X
-  xargs -> cat url-list.txt | xargs wget –c : télécharger toutes les URLs se trouvant dans lefichier url-list.txt
+  	xargs -> cat url-list.txt | xargs wget –c : télécharger toutes les URLs se trouvant dans lefichier url-list.txt
 	xfs_growfs : prendre en compte les changement effectués sur la taille du disque (XFS)
 	
 W
