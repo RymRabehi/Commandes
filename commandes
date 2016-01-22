@@ -1,7 +1,8 @@
 A
 	apachetop : top apache
 	apt-get install --only-upgrade package : mettre à jour uniquement un paquet
-	
+B
+        blkid : donne des infos sur les fs.
 C
 	cat /proc/cpuinfo : afficher des infos sur le cpu
 	cat /proc/drbd : afficher des infos sur un noeud drbd
@@ -25,7 +26,8 @@ E
 	
 F
 	find . -mtime +10 | while read file; do gzip "$file"; done : trouver les fichiers datant de plus de 10 jours et les zipper
-	ftptop : liste des connexions au serveur ftp
+	ftptop : liste des connexions au serveur ftp*
+        find . -name "*.xml" -print0 | tar -cvf backup_xml.tar --null -T - : combine find et tar. Ici, crée une archive contenant tous les fichiers xml trouvés récursivement.
 	free : Retourne la swap utilisée et libre
 		-b : en B
 		-g : en GB
@@ -72,7 +74,8 @@ P
 	
 R
 	resize2fs "mapper de la partition" : prendre en compte les changement effectués sur la taille du disque (EXT2/3/4)
-
+        rpm -qa --queryformat '%10{NAME} %20{GROUP}\n' : donne la correspondance entre un paquet et son groupe.
+        
 S
 	scp user@IP:file.txt . : copier un fichier depuis un serveur vers le répertoire courant dur répertoire sur lequel on est.
 	scp -r Repertoire user@IP:Chemin : copier un répertoire vers un dossier distant
@@ -105,7 +108,10 @@ X
 	xfs_growfs : prendre en compte les changement effectués sur la taille du disque (XFS)
 	
 W
-	wget -p URL : tester une URL 
-	
+	wget -p URL : tester une URL
+Y
+        yum grouplist -v : liste les groupes de paquets yum.
+        yum groupinfo <nom du groupe> : donne des infos sur un groupe yum.
+        
 Z
 	zgrep -i maxclient /var/log/apache2/acces.log : voir si et quand le maxclient a été atteint
