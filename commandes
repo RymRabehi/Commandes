@@ -110,6 +110,11 @@ X
 	
 W
 	wget -p URL : tester une URL
+	whatportis [port] : savoir quel service utilise le port
+	whatportis [service] : connaître le numéro de port du service
+	whatportis [service] --like : connaître le numéro de port d'un service dont on ne connaît pas son nom exact
+		[Pour l'installer, installer python-pip puis faire un sudo pip install whatportis]
+
 Y
         yum grouplist -v : liste les groupes de paquets yum.
         yum groupinfo <nom du groupe> : donne des infos sur un groupe yum.
