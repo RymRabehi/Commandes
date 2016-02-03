@@ -26,6 +26,7 @@ E
 	
 F
 	find . -mtime +10 | while read file; do gzip "$file"; done : trouver les fichiers datant de plus de 10 jours et les zipper
+	find /path/* -type -f -ctime +10 -exec rm -f {} \; : trouver les fichiers vieux de 10jours et les supprimer
 	ftptop : liste des connexions au serveur ftp*
         find . -name "*.xml" -print0 | tar -cvf backup_xml.tar --null -T - : combine find et tar. Ici, crée une archive contenant tous les fichiers xml trouvés récursivement.
 	free : Retourne la swap utilisée et libre
