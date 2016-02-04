@@ -14,6 +14,7 @@ C
 D
 	dd if=/dev/zero of=/tmp/output.img bs=8k count=256k : mesure le taux d'écriture sur disque
 	df -h : mémoire disponible
+	df -i : inodes utilisés
 	df -T : affiche en plus le système de fichier
 	dmesg | mail toto.titi@tata.com : envoyer un mail 
   	dmesg | more : afficher les messages affichés au boot
