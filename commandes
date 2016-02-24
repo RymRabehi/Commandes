@@ -84,7 +84,8 @@ S
 	scp -r Repertoire user@IP:Chemin : copier un répertoire vers un dossier distant
 	sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config : désactiver selinux
 	sed -n 5p filename : permet d'afficher la 5ème ligne du fichier filename
-	setfacl -M acl /path/to/dir : appliquer des ACL sauvegardés dans un fichier 
+	setfacl -M acl /path/to/dir : appliquer des ACL sauvegardés dans le fichier acl 
+	setfacl -Rm d:u:user:rwX /path/ : appliquer de manière récursive les droits en lecture/écriture/exécution sur un répertoire
 	sesstatus: statut de selinux
 	snmpwalk -v 2c -c communauté IP OID : faire un snmpwalk
 	
