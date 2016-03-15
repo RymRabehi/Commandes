@@ -43,12 +43,14 @@ H
 	httpd -M : liste des modules utilisés 
 	
 I
+	ifconfig eth0 IP netmask MASK up : configurer une IP temporairement
 	iftop : top des interfaces réseau
 	
 K
 	kill num_pid : tue un processus ayant pour pid num_pid
 
 L
+	ln –s /repertoire/source/ /repertoire/dest : créer un lien symbolique entre répertoires
 	ls -lh : afficher la taille des fichiers et répertoires en Mo
 	lsof -n | grep LISTEN : liste les ports en écoute
 	lsof -n | grep UDP : liste les connexions UDP 
@@ -76,6 +78,7 @@ P
 	
 R
 	resize2fs "mapper de la partition" : prendre en compte les changement effectués sur la taille du disque (EXT2/3/4)
+	route add -net IP/24 gw GATEWAY dev eth0 : configurer IP de manière permanante
         rpm -qa --queryformat '%10{NAME} %20{GROUP}\n' : donne la correspondance entre un paquet et son groupe.
         rsync -av user@IP:/directory/to/copy/truc /directory/where/to/paste/copy/machin :  copier un répertoire "truc" depuis la machine dont en entre l'IP vers le répertoire "machin" de la machine sur laquelle on est.
         
@@ -96,7 +99,8 @@ T
 	
 U
 	uname -p : savoir si la machine est sous 32 ou 64 bits
-	uname -a : version du noyau 
+	uname -a : version du noyau
+	unlink lien_symbolique : supprimer un lien symbolique
 	
 
 V 
