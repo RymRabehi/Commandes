@@ -45,6 +45,7 @@ H
 I
 	ifconfig eth0 IP netmask MASK up : configurer une IP temporairement
 	iftop : top des interfaces réseau
+	iptables -A INPUT -p [Protocole] --dport [Port] -j ACCEPT : accepter les connexions entrantes sur un port et pour un protocoles
 	
 K
 	kill num_pid : tue un processus ayant pour pid num_pid
