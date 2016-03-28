@@ -10,7 +10,6 @@ C
 	Fichier /et/crontab : */10 * * * * /home/toto/check-disk-space 
 		-> programmer un cron job toutes les 10 minutes
   
-
 D
 	dd if=/dev/zero of=/tmp/output.img bs=8k count=256k : mesure le taux d'écriture sur disque
 	df -h : mémoire disponible
