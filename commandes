@@ -72,6 +72,9 @@ N
 	netstat -tulp : liste les ports en écoute
 	netstat -s : montrer les statistiques sur tous les ports
 	
+O
+	openssl req -x509 -nodes -sha512 -days 3650 -newkey rsa:2048 -keyout /etc/pki/tls/private/example.key  -out /etc/pki/tls/certs/example.cert : créer un certificat et une clé ssl
+
 P
 	ps -ef | more : voir les processus qui tournent
 	ps -efH | more : voir les processus qui tournent sous forme d'arbre
