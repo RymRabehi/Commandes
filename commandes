@@ -1,6 +1,9 @@
 A
 	apachetop : top apache
+	apt-cache show <paquet> |grep Version : Lister les versions disponibles pour un paquet
+	apt-get install <paquet>=version : Installer une version spécifique d'un paquet
 	apt-get install --only-upgrade package : mettre à jour uniquement un paquet
+	apt-cache search : chercher un paquet
 B
         blkid : donne des infos sur les fs.
 C
@@ -19,9 +22,11 @@ D
   	dmesg | more : afficher les messages affichés au boot
 	dmidecode : décoder la table dmi
 	dpkg -P $(dpkg -l | grep '^rc' | awk '{ print $2 }') : nettoyer son système
+	dpkg-reconfigure locales : ajouter une langue
 	du -hsc /home/toto/test/* | sort -h : afficher la taille des sous répertoires en les triant par ordre croissant
     
 E
+	echo "QUIT" | openssl s_client -connect SITE_WEB:443 <http://SITE_WEB:443> | openssl x509 -noout -text : récupérer des informations sur un certificat
 	ext2online : prendre en compte les changement effectués sur la taille du disque (EXT3)
 	
 F
@@ -51,12 +56,13 @@ K
 
 L
 	ln –s /repertoire/source/ /repertoire/dest : créer un lien symbolique entre répertoires
+	locale : afficher la langue disponible
 	ls -lh : afficher la taille des fichiers et répertoires en Mo
 	lsof -n | grep LISTEN : liste les ports en écoute
 	lsof -n | grep UDP : liste les connexions UDP 
-	lvextend -v -L +xGo "mapper de la partition" : étendre une partition
 	lspci | grep VGA : informations sur la carte graphique
   	lsusb : lister les matériels usb
+  	lvextend -v -L +xGo "mapper de la partition" : étendre une partition
     
 M
 	mtop : top mysql
@@ -71,6 +77,7 @@ N
 	netstat -tap : liste des connexions établies
 	netstat -tulp : liste les ports en écoute
 	netstat -s : montrer les statistiques sur tous les ports
+	netstat -tanpu | grep -v LISTEN | awk '{print $5}' | sed 's,:.*,,' | sort | uniq --count | sed 's,  *,,' | sort -nr : afficher et compter les IPs qui écoutent sur le serveur
 	
 O
 	openssl req -x509 -nodes -sha512 -days 3650 -newkey rsa:2048 -keyout /etc/pki/tls/private/example.key  -out /etc/pki/tls/certs/example.cert : créer un certificat et une clé ssl
@@ -115,7 +122,7 @@ V
 	visudo /etc/sudoers : éditer le fichier /etc/sudoers 
 	
 X
-  	xargs -> cat url-list.txt | xargs wget –c : télécharger toutes les URLs se trouvant dans lefichier url-list.txt
+  	xargs -> cat url-list.txt | xargs wget –c : télécharger toutes les URLs se trouvant dans le fichier url-list.txt
 	xfs_growfs : prendre en compte les changement effectués sur la taille du disque (XFS)
 	
 W
@@ -130,4 +137,5 @@ Y
         yum groupinfo <nom du groupe> : donne des infos sur un groupe yum.
         
 Z
+	zcat access.log-YYYTMMDD.gz  | awk '{ print $1}' | sort -n | uniq -c | sort -n -k 1 : afficher et compter les IPs qui ont requêté un site à une date précise
 	zgrep -i maxclient /var/log/apache2/acces.log : voir si et quand le maxclient a été atteint
