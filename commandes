@@ -4,8 +4,10 @@ A
 	apt-get install <paquet>=version : Installer une version spécifique d'un paquet
 	apt-get install --only-upgrade package : mettre à jour uniquement un paquet
 	apt-cache search : chercher un paquet
+	
 B
         blkid : donne des infos sur les fs.
+        
 C
 	cat /proc/cpuinfo : afficher des infos sur le cpu
 	cat /proc/drbd : afficher des infos sur un noeud drbd
