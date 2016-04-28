@@ -83,6 +83,8 @@ N
 	
 O
 	openssl req -x509 -nodes -sha512 -days 3650 -newkey rsa:2048 -keyout /etc/pki/tls/private/example.key  -out /etc/pki/tls/certs/example.cert : créer un certificat et une clé ssl
+	openssl x509 -in certificat.crt -noout -text : vérifier qu'un certificat match bien avec la clé
+	openssl rsa -noout -modulus -in server.key | openssl fct : récupérer le modulus de la clé. Pour le comparer avec celui du certificat, faire la même chose avec le .crt puis comparer les deux résultats 
 
 P
 	ps -ef | more : voir les processus qui tournent
