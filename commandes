@@ -51,6 +51,7 @@ H
 I
 	ifconfig eth0 IP netmask MASK up : configurer une IP temporairement
 	iftop : top des interfaces réseau
+	ip link : lister les interfaces réseaux et voir celles dont le état (state) est up ou down
 	iptables -A INPUT -p [Protocole] --dport [Port] -j ACCEPT : accepter les connexions entrantes sur un port et pour un protocoles
 	
 K
