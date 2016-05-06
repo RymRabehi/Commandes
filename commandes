@@ -7,6 +7,8 @@ A
 	
 B
         blkid : donne des infos sur les fs.
+	blockdev --getra /dev/sda : récupérer la quantité de données lues à chaque accès
+	blockdev --setra 4096 /dev/sda : modifier (dynamiquement, cette valeur est maj au reboot) la quantité de données lues à chaque accès
         
 C
 	cat /proc/cpuinfo : afficher des infos sur le cpu
