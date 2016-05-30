@@ -108,6 +108,7 @@ S
 	setfacl -Rm d:u:user:rwX /path/ : appliquer de manière récursive les droits en lecture/écriture/exécution sur un répertoire
 	sesstatus: statut de selinux
 	snmpwalk -v 2c -c communauté IP OID : faire un snmpwalk
+	source /root/.bashrc : recharger le .bashrc sans se déconnecter
 	
 T
 	tar czvf /chemin/repertoire/a/archiver* | ssh root@IP "cat > /chemin/repertoire/ou/sauvegarder/larchive.tgz" : faire un tar d'un répertoire et le sauvegarder sur une autre machine (tar over ssh) 
