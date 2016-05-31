@@ -92,6 +92,7 @@ O
 P
 	ps -ef | more : voir les processus qui tournent
 	ps -efH | more : voir les processus qui tournent sous forme d'arbre
+	ps h -Led -o user | sort | uniq -c | sort -n : compter le nombre de processus lancés par chaque utilisateur
 	
 R
 	resize2fs "mapper de la partition" : prendre en compte les changement effectués sur la taille du disque (EXT2/3/4)
