@@ -148,3 +148,4 @@ Y
 Z
 	zcat access.log-YYYTMMDD.gz  | awk '{ print $1}' | sort -n | uniq -c | sort -n -k 1 : afficher et compter les IPs qui ont requêté un site à une date précise
 	zgrep -i maxclient /var/log/apache2/acces.log : voir si et quand le maxclient a été atteint
+	zgrep -i "23/May/2016:20:[0-1]"  access_log-20160524.gz | awk '{print $1}' | wc -l : compter le nombre de connexions le 23/05/16 à 20h
