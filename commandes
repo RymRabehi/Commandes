@@ -35,9 +35,13 @@ E
 	
 F
 	find . -mtime +10 | while read file; do gzip "$file"; done : trouver les fichiers datant de plus de 10 jours et les zipper
+	find . -name "*.xml" -print0 | tar -cvf backup_xml.tar --null -T - : combine find et tar. Ici, crée une archive contenant tous les fichiers xml trouvés récursivement.
+	find /chemin/vers/le/fichier | awk '{print length,$0}' | sort -rn | head -n 10 : afficher les 10 chemins de fichiers les plus longs du répertoire /chemin/vers/le/fichier
+	find /chemin/vers/le/fichier -regextype posix-egrep -regex '.{x,}' : afficher les chemins de fichiers plus long que x caractères
+	find /chemin/vers/le/fichier -regextype posix-egrep -regex ".*[^/]{x}" afficher les noms des fichiers plus long que x caractères
+	find /chemin/vers/le/fichier -regextype posix-egrep -regex ".*[^/]{x}" -print0 | xargs -0 rm : afficher les noms des fichiers plus long que x caractères puis les supprimer
 	find /path/* -type -f -ctime +10 -exec rm -f {} \; : trouver les fichiers vieux de 10jours et les supprimer
 	ftptop : liste des connexions au serveur ftp*
-        find . -name "*.xml" -print0 | tar -cvf backup_xml.tar --null -T - : combine find et tar. Ici, crée une archive contenant tous les fichiers xml trouvés récursivement.
 	free : Retourne la swap utilisée et libre
 		-b : en B
 		-g : en GB
@@ -60,6 +64,7 @@ K
 	kill num_pid : tue un processus ayant pour pid num_pid
 
 L
+	less archive.tar.gz : voir le contenu de l'archive
 	ln –s /repertoire/source/ /repertoire/dest : créer un lien symbolique entre répertoires
 	locale : afficher la langue disponible
 	ls -lh : afficher la taille des fichiers et répertoires en Mo
@@ -90,9 +95,12 @@ O
 	openssl rsa -noout -modulus -in server.key | openssl fct : récupérer le modulus de la clé. Pour le comparer avec celui du certificat, faire la même chose avec le .crt puis comparer les deux résultats 
 
 P
+	printf "/chemin/vers/le/fichier/fichier.txt" | wc -m : compter le nombre de caractères du chemin du fichier 
+	printf "Mon beau fichier.txt" | wc -m : compter le nombre de caractères du nom du fichier 
 	ps -ef | more : voir les processus qui tournent
 	ps -efH | more : voir les processus qui tournent sous forme d'arbre
 	ps h -Led -o user | sort | uniq -c | sort -n : compter le nombre de processus lancés par chaque utilisateur
+	ps -e -o pid,comm,lstart | grep process : voir la date et l'heure de lancement d'un process
 	
 R
 	resize2fs "mapper de la partition" : prendre en compte les changement effectués sur la taille du disque (EXT2/3/4)
@@ -113,6 +121,9 @@ S
 	
 T
 	tar czvf /chemin/repertoire/a/archiver* | ssh root@IP "cat > /chemin/repertoire/ou/sauvegarder/larchive.tgz" : faire un tar d'un répertoire et le sauvegarder sur une autre machine (tar over ssh) 
+	tar -xzvf archive.tar.gz repertoire/a/decompresser : décompresser un répertoire particulier d'une archive
+	tune2fs -c 5 /partition : modifier le "Maximum mount" d'une partition 
+	tune2fs -l /partition | grep -Ei "Mount count|Maximum mount" : afficher le "Mount count" (nombre de fois où une partition a été montée) et le "Maximum count" (nombre max de montage d'une partition, après quoi, un fsck sera forcé) d'une partition
 	top : affiche les processus en cours d'exécution
 		-u process : affiche uniquement un processus
 	
