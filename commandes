@@ -31,6 +31,7 @@ D
     
 E
 	echo "QUIT" | openssl s_client -connect SITE_WEB:443 <http://SITE_WEB:443> | openssl x509 -noout -text : récupérer des informations sur un certificat
+	echo -n | openssl s_client -showcerts -connect serveur_git:port 2>/dev/null  | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' : récupérer le certificat utilisé par un site
 	ext2online : prendre en compte les changement effectués sur la taille du disque (EXT3)
 	
 F
