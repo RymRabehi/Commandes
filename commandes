@@ -4,6 +4,7 @@ A
 	apt-get install <paquet>=version : Installer une version spécifique d'un paquet
 	apt-get install --only-upgrade package : mettre à jour uniquement un paquet
 	apt-cache search : chercher un paquet
+	apachectl –t –D DUMP_MODULES : lister les modules apache
 	
 B
         blkid : donne des infos sur les fs.
