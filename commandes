@@ -14,6 +14,7 @@ B
 C
 	cat /proc/cpuinfo : afficher des infos sur le cpu
 	cat /proc/drbd : afficher des infos sur un noeud drbd
+	cat -n file > file_num : crée le fichier file_num ayant le même contenu que le fichier file dont chaque ligne sera numérotée
 	crontab -u user -l : voir la crontab spécifique à un user 
 	Fichier /et/crontab : */10 * * * * /home/toto/check-disk-space 
 		-> programmer un cron job toutes les 10 minutes
@@ -113,6 +114,8 @@ R
 S
 	scp user@IP:file.txt . : copier un fichier depuis un serveur vers le répertoire courant dur répertoire sur lequel on est.
 	scp -r Repertoire user@IP:Chemin : copier un répertoire vers un dossier distant
+	sed '1!G;h;$!d' file : afficher le contenu du fichier file en inversant son contenu
+	sed -i 's/.$//' file : supprimer le dernier caractère de chaque ligne du fichier file
 	sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config : désactiver selinux
 	sed -n 5p filename : permet d'afficher la 5ème ligne du fichier filename
 	setfacl -M acl /path/to/dir : appliquer des ACL sauvegardés dans le fichier acl 
